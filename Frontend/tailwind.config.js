@@ -10,10 +10,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primaryGreen: "#2ECC71",
+        primaryGreen: "#82E394",
+
+        primary: "#0D0D0D",
+        secondary: "#616161",
       },
       fontFamily: {
-        urbanist: "Urbanist",
+        "urbanist-regular": ["Urbanist-Regular"],
+        "urbanist-bold": ["Urbanist-Bold"],
+        "urbanist-medium": ["Urbanist-Medium"],
       },
     },
   },
