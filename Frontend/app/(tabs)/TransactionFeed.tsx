@@ -112,7 +112,10 @@ const TransactionFeed = () => {
             <Text className="text-white mt-2 font-urbanist-regular">Send</Text>
           </View>
           <View className="items-center">
-            <TouchableOpacity className=" w-16 h-16 rounded-full border border-white justify-center items-center">
+            <TouchableOpacity
+              onPress={() => router.push("/request")}
+              className=" w-16 h-16 rounded-full border border-white justify-center items-center"
+            >
               <AntDesign name="download" size={24} color="white" />
             </TouchableOpacity>
             <Text className="text-white mt-2 font-urbanist-regular">
