@@ -10,7 +10,7 @@ import {
 import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { FormattedTransaction, formatTransactions } from "@/mockTransaction";
 import { mockTransactions } from "@/mockTransaction";
@@ -123,6 +123,8 @@ const allContacts: Contact[] = [
   },
 ];
 export default function SelectContactScreen() {
+  const { type } = useLocalSearchParams();
+
   const [selectedTab, setSelectedTab] = useState<"All" | "Favorites">("All");
 
   const filteredContacts =
@@ -136,6 +138,7 @@ export default function SelectContactScreen() {
           router.push({
             pathname: "/send/amount",
             params: {
+              type,
               name: item?.name,
               email: item?.email,
               avatar: item?.avatar,
@@ -166,7 +169,7 @@ export default function SelectContactScreen() {
         >
           <AntDesign name="arrowleft" size={24} color="black" className="" />
         </TouchableOpacity>
-        <Text className="font-urbanist-bold text-2xl  ">Send To</Text>
+        <Text className="font-urbanist-bold text-2xl  ">{type} To</Text>
       </View>
       <View className="bg-gray-200 bg-opacity-20 flex-row px-4  w-11/12 py-2 self-center mt-6">
         <FontAwesome name="search" size={24} color="#6B7280" />

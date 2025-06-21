@@ -14,6 +14,8 @@ module.exports = {
 
         primary: "#0D0D0D",
         secondary: "#616161",
+        visaBlue: "#1A1F71",
+        paypalBlue: "#003087",
       },
       fontFamily: {
         "urbanist-regular": ["Urbanist-Regular"],

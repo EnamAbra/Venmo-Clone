@@ -13,6 +13,8 @@ import { router, useLocalSearchParams } from "expo-router";
 import { FormattedTransaction } from "@/mockTransaction";
 
 const sendnow = () => {
+  const { type } = useLocalSearchParams();
+
   const { amount, name, email, avatar } = useLocalSearchParams();
   const displayName = Array.isArray(name) ? name[0] : name;
   const displayEmail = Array.isArray(email) ? email[0] : email;
@@ -30,7 +32,7 @@ const sendnow = () => {
           >
             <AntDesign name="arrowleft" size={24} color="black" />
           </TouchableOpacity>
-          <Text className="font-urbanist-bold text-2xl">Send Now</Text>
+          <Text className="font-urbanist-bold text-2xl">{type} Now</Text>
         </View>
         <Text className="font-urbanist-bold text-xl mt-10">Recipient</Text>
         <View className="  p-4 bg-gray-200">
