@@ -14,7 +14,7 @@ export default function Index() {
   }
   return (
     <SafeAreaView>
-      <View className=" justify-center items-center bg-blue-500 font-urbanist-black">
+      <View className=" justify-center items-center bg-blue-500 ">
         <Text>Welcome!</Text>
       </View>
     </SafeAreaView>

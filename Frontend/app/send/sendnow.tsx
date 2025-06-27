@@ -50,7 +50,7 @@ const sendnow = () => {
 
         <View>
           <Text className="font-urbanist-medium mt-16">Amount to send</Text>
-          <View className="px-8 py-4border border-gray-300 ">
+          <View className="px-8 py-4 border border-gray-300 ">
             <Text className="font-urbanist-bold text-3xl">{amount}</Text>
           </View>
         </View>

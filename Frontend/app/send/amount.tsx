@@ -66,12 +66,12 @@ const Amountscreen = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           className="mt-60 self-center"
           onPress={() => {
             "/send/sendnow";
           }}
-        ></TouchableOpacity>
+        ></TouchableOpacity> */}
       </SafeAreaView>
     </View>
   );

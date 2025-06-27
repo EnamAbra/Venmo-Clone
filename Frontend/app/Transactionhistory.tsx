@@ -18,7 +18,6 @@ import { FormattedTransaction } from "@/mockTransaction";
 const Transactionhistory = () => {
   const transactionSections = formatTransactions();
 
-  // Flatten the sectioned data
   const flatData: FormattedTransaction[] = transactionSections.flatMap(
     (section) => section.data
   );

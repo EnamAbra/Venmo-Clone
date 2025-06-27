@@ -22,7 +22,7 @@ export default function receipt(): JSX.Element {
       <View>
         <TouchableOpacity
           onPress={() => router.push("/TransactionFeed")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10"
+          className="absolute top-0 left-0 z-10"
         >
           <Ionicons name="close" size={24} color="black" />
         </TouchableOpacity>
@@ -42,7 +42,7 @@ export default function receipt(): JSX.Element {
           </Text>
         </View>
 
-        <View className="flex-row mt-12 bg-gray-400 bg-opacity-20">
+        <View className="flex-row mt-12 bg-gray-200 bg-opacity-20">
           <View>
             <Row label="You top up " value={formatAmount(amount)} />
 
@@ -63,12 +63,12 @@ export default function receipt(): JSX.Element {
         </View>
 
         <View className="flex-row justify-center items-center gap-x-4 mb-0">
-          <View className="bg-whie border border-primaryGreen rounded-full  py-4 items-center mt-24 px-6 font-urbanist-bold  ">
+          <TouchableOpacity className="bg-whie border border-primaryGreen rounded-full  py-4 items-center mt-24 px-6 font-urbanist-bold  ">
             <Text className="font-bold text-lg">Download Receipt</Text>
-          </View>
-          <View className="bg-primaryGreen rounded-full  py-4 items-center mt-24 px-6 font-urbanist-bold  ">
+          </TouchableOpacity>
+          <TouchableOpacity className="bg-primaryGreen rounded-full  py-4 items-center mt-24 px-6 font-urbanist-bold  ">
             <Text className="font-bold text-lg">Share Receipt</Text>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>

@@ -65,127 +65,159 @@ const TransactionFeed = () => {
   );
 
   return (
-    <SafeAreaView>
-      <View className="bg-primaryGreen  ">
-        <View className="flex-row">
-          <Text className=" font-extrabold  text-5xl ml-5 mt-8 text-white mb-12 font-urbanist-regular">
-            Fintra
-          </Text>
-
-          <Ionicons
-            name="notifications"
-            size={24}
-            color="white"
-            className=" ml-auto"
-          />
-        </View>
+    <View className="bg-primaryGreen  ">
+      <SafeAreaView>
         <View>
-          <Text className="flex-row text-center ">
-            <Text
-              key="amount"
-              className="font-extrabold  text-3xl text-white font-urbanist-regular
+          <View className="flex-row ">
+            <View>
+              <Image
+                source={require("@/assets/images/BlackLogo.png")}
+                className="w-20 h-20 rounded-full ml-5 mt-8"
+              />
+            </View>
+            <View className="justify-center items-center  ">
+              <Text className=" font-extrabold  text-5xl ml-20 mt-8  mb-12 font-urbanist-bold self-center ">
+                Fintra
+              </Text>
+            </View>
+            <Ionicons
+              name="notifications"
+              size={24}
+              color="black"
+              className=" ml-auto"
+              onPress={() => router.push("/notifications")}
+            />
+          </View>
+          <View>
+            <View className="flex-row items-center justify-center mt-10">
+              <Text
+                key="amount"
+                className="font-extrabold  text-3xl font-urbanist-regular  text-center
           "
-            >
-              9,4555.88
-            </Text>
+              >
+                9,4555.88
+              </Text>
 
-            <Text
-              key="dollar"
-              className="text-xs  text-white font-urbanist-regular"
-            >
-              $
-            </Text>
-          </Text>
+              <Text key="dollar" className="text-xs   font-urbanist-regular">
+                $
+              </Text>
+            </View>
 
-          <Text className="font-thin text-sm text-center text-white font-urbanist-regular">
-            Available balance
-          </Text>
+            <Text className="font-thin text-sm text-center  font-urbanist-regular">
+              Available balance
+            </Text>
+          </View>
+          <View className="flex-row justify-evenly mt-16  mb-10 ">
+            <View className="items-center">
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: "/send",
+                    params: { type: "Send" },
+                  })
+                }
+                className=" w-16 h-16 rounded-full border border-black justify-center items-center"
+              >
+                <Feather name="send" size={24} color="black" />
+              </TouchableOpacity>
+              <Text className=" mt-2 font-urbanist-regular">Send</Text>
+            </View>
+            <View className="items-center">
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: "/send",
+                    params: { type: "Request" },
+                  })
+                }
+                className=" w-16 h-16 rounded-full border border-black justify-center items-center"
+              >
+                <AntDesign name="download" size={24} color="black" />
+              </TouchableOpacity>
+              <Text className=" mt-2 font-urbanist-regular">Request</Text>
+            </View>
+            <View className="items-center">
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: "/topup",
+                    params: { type: "Top-Up" },
+                  })
+                }
+                className=" w-16 h-16 rounded-full border border-black justify-center items-center"
+              >
+                <Entypo name="wallet" size={24} color="black" />
+              </TouchableOpacity>
+              <Text className=" mt-2 font-urbanist-regular">Top-up</Text>
+            </View>
+            <View className="items-center">
+              <TouchableOpacity
+                onPress={() =>
+                  router.push({
+                    pathname: "/send",
+                    params: { type: "Withdraw" },
+                  })
+                }
+                className=" w-16 h-16 rounded-full border border-black justify-center items-center"
+              >
+                <MaterialCommunityIcons
+                  name="cash-minus"
+                  size={24}
+                  color="black"
+                />
+              </TouchableOpacity>
+              <Text className=" mt-2 font-urbanist-regular">Withdraw</Text>
+            </View>
+          </View>
         </View>
-        <View className="flex-row justify-evenly mt-16  mb-10 ">
-          <View className="items-center">
-            <TouchableOpacity
-              onPress={() => router.push("/send")}
-              className=" w-16 h-16 rounded-full border border-white justify-center items-center"
-            >
-              <Feather name="send" size={24} color="white" />
-            </TouchableOpacity>
-            <Text className="text-white mt-2 font-urbanist-regular">Send</Text>
-          </View>
-          <View className="items-center">
-            <TouchableOpacity
-              onPress={() => router.push("/request")}
-              className=" w-16 h-16 rounded-full border border-white justify-center items-center"
-            >
-              <AntDesign name="download" size={24} color="white" />
-            </TouchableOpacity>
-            <Text className="text-white mt-2 font-urbanist-regular">
-              Request
+        <View className="bg-white">
+          <View className="flex-row justify-between">
+            <Text className="font-bold text-2xl mb-10 font-urbanist-regular mt-8">
+              Transaction History
             </Text>
-          </View>
-          <View className="items-center">
-            <TouchableOpacity className=" w-16 h-16 rounded-full border border-white justify-center items-center">
-              <Entypo name="wallet" size={24} color="white" />
-            </TouchableOpacity>
-            <Text className="text-white mt-2 font-urbanist-regular">
-              Top-up
-            </Text>
-          </View>
-          <View className="items-center">
-            <TouchableOpacity className=" w-16 h-16 rounded-full border border-white justify-center items-center">
-              <MaterialCommunityIcons
-                name="cash-minus"
+            <TouchableOpacity
+              className="flex-row "
+              onPress={() => router.push("/Transactionhistory")}
+            >
+              <Text className="text-gray-500 font-medium mr-3 text-lg font-urbanist-regular mt-8">
+                View All
+              </Text>
+              <MaterialIcons
+                name="navigate-next"
                 size={24}
-                color="white"
+                color="#6b7280"
+                className="mt-8"
               />
             </TouchableOpacity>
-            <Text className="text-white mt-2 font-urbanist-regular">
-              Withdraw
-            </Text>
+          </View>
+
+          <View>
+            <FlatList
+              data={transactionSections}
+              keyExtractor={(item) => item.sectionTitle}
+              renderItem={({ item: section }) => (
+                <View>
+                  <View className="flex-row">
+                    <Text className="text-base font-bold text-gray-700 font-urbanist-regular ">
+                      {section.sectionTitle}
+                    </Text>
+                    <View className="flex-1 h-px bg-gray-300 mt-4" />
+                  </View>
+                  <FlatList
+                    data={section.data}
+                    keyExtractor={(item) => item.id}
+                    renderItem={renderTransactionItem}
+                    ItemSeparatorComponent={() => (
+                      <View className="h-px bg-gray-200 my-2" />
+                    )}
+                  />
+                </View>
+              )}
+            />
           </View>
         </View>
-      </View>
-      <View className="bg-white">
-        <View className="flex-row justify-between">
-          <Text className="font-bold text-2xl mb-10 font-urbanist-regular">
-            Transaction History{" "}
-          </Text>
-          <TouchableOpacity
-            className="flex-row "
-            onPress={() => router.push("/Transactionhistory")}
-          >
-            <Text className="text-gray-500 font-medium mr-3 mt-1 text-lg font-urbanist-regular">
-              View All
-            </Text>
-            <MaterialIcons name="navigate-next" size={24} color="#6b7280" />
-          </TouchableOpacity>
-        </View>
-
-        <View>
-          <FlatList
-            data={transactionSections}
-            keyExtractor={(item) => item.sectionTitle}
-            renderItem={({ item: section }) => (
-              <View>
-                <View className="flex-row">
-                  <Text className="text-base font-bold text-gray-700 font-urbanist-regular ">
-                    {section.sectionTitle}
-                  </Text>
-                  <View className="flex-1 h-px bg-gray-300 mt-4" />
-                </View>
-                <FlatList
-                  data={section.data}
-                  keyExtractor={(item) => item.id}
-                  renderItem={renderTransactionItem}
-                  ItemSeparatorComponent={() => (
-                    <View className="h-px bg-gray-200 my-2" />
-                  )}
-                />
-              </View>
-            )}
-          />
-        </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </View>
   );
 };
 
