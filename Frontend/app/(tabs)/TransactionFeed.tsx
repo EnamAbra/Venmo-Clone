@@ -154,7 +154,7 @@ const TransactionFeed = () => {
               <TouchableOpacity
                 onPress={() =>
                   router.push({
-                    pathname: "/send",
+                    pathname: "/withdraw",
                     params: { type: "Withdraw" },
                   })
                 }

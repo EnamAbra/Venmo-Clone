@@ -68,7 +68,7 @@ const sendnow = () => {
               <Text>Cancel</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push("/send/sendreceipt")}>
             <View className="bg-primaryGreen rounded-xl py-4 items-center mt-24 px-10 font-urbanist-bold">
               <Text className="font-bold text-lg">Send</Text>
             </View>

@@ -14,14 +14,19 @@ import { useLocalSearchParams } from "expo-router";
 
 const Amountscreen = () => {
   const { type } = useLocalSearchParams();
+  function formatAmount(value: string | string[] | undefined): string {
+    const raw = Array.isArray(value) ? value[0] : value ?? "0";
+    const num = parseFloat(raw);
+    return num.toFixed(2);
+  }
 
   const { name, email, avatar } = useLocalSearchParams();
   const [amount, setAmount] = useState("");
   const handleContinue = () => {
     if (amount) {
       router.push({
-        pathname: "/send/sendnow",
-        params: { type, amount, name, email, avatar },
+        pathname: "/withdraw/select",
+        params: { type, amount: formatAmount(amount) },
       });
     }
   };
@@ -48,7 +53,7 @@ const Amountscreen = () => {
                 placeholder="Enter an amount"
                 keyboardType="numeric"
                 value={amount}
-                onChangeText={setAmount}
+                onChangeText={(text) => setAmount(text)}
               />
               <Text className="mb-1">₵</Text>
             </View>
@@ -66,12 +71,6 @@ const Amountscreen = () => {
             </TouchableOpacity>
           </View>
         </View>
-        {/* <TouchableOpacity
-          className="mt-60 self-center"
-          onPress={() => {
-            "/send/sendnow";
-          }}
-        ></TouchableOpacity> */}
       </SafeAreaView>
     </View>
   );
